@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+<html>
+<title>Archinkluencer</title>
+<meta charset="UTF-8">
+<link rel="icon" href="../static/14-logo.PNG">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type = "text/html" href="/Users/ameliehofer/PycharmProjects/djangoProject/Archinkluencer/static/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/ca11de6aef.js" crossorigin="anonymous"></script>
+
+
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: 120%;
+background-image: url("../static/13-logo.PNG");
+  min-height: 70%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+
+}
+
+.w3-button-test {
+  padding: 16px;
+
+    position: sticky;
+
+    left: 25%;
+    bottom: 80%;
+    transform: translateY(-80%);
+    background-color: #e0dcd7;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+
+
+}
+
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #FFFFFF;
+  text-align: center;
+    padding: 5px;
+  border: 1px solid #d3d3d3;
+    width: 200px;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #ff6c48;
+  color: #fff;
+}
+
+
+</style>
+<>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img class="w3-image" src="../static/icon_grey.png" alt="Architecture" width="5%" ></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#app" class="w3-bar-item w3-button"><i class="fa-solid fa-wheelchair-move"></i> APP </a>
+      <a href="#konzept" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa-solid fa-circle-info"></i> KONZEPT</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> KONTAKT </a>
+
+
+
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="#app" onclick="w3_close()" class="w3-bar-item w3-button">APP</a>
+     <a href="#konzept" onclick="w3_close()" class="w3-bar-item w3-button">KONZEPT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">KONTAKT</a>
+
+</nav>
+
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container  " id="home">
+
+
+  <!--<div class="w3-display-bottomleft w3-text-black" style="padding:80px 120px">
+      <a href="http://127.0.0.1:8000/archinkluencer01/"  class="w3-button-test w3-deep-orange w3-padding-medium w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Teste die App</a>
+  </div>-->
+</header>
+
+
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center">ARCHINKLUENCER</h3>
+  <p class="w3-center w3-large">Archinkluencer ist ein Tool, um. . .</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+
+      <i class="fa-solid fa-wheelchair-move w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large w3-text-deep-orange">Vision</p>
+
+      <p>. . . ein tieferes Verständnis und Bewusstsein für bedarfsgerechte Planung für eine inklusive Gesellschaft zu erlangen und dieses zielführend anzuwenden.</p>
+    </div>
+
+    <div class="w3-quarter">
+      <i class=" fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large w3-text-deep-orange">Planung</p>
+
+        <p>. . . Architekt*innen und Planer*innen die barrierefreie Planung zu vereinfachen und diese in die BIM-Planung zu integrieren.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large w3-text-deep-orange">Design</p>
+      <p>. . . DIN-konforme Lösungen zu generieren und optimieren.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large w3-text-deep-orange">Unterstützung</p>
+      <p>. . . visuell und spielerisch die Regeln der DIN begreifbar zu machen. </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--<script type="'text/html'" src=”https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+
+<!-- Navbar (sit on top) -->
+<div class="w3-container" style="padding:128px 16px" id="app">
+  <h3 class="w3-center">WEBAPP ARCHINKLUENCER</h3>
+  <p class="w3-center w3-large">Probiere sie aus. . .</p>
+
+  <div class="w3-bar w3-light-grey w3-card" id="myNavbar">
+    <!--<a  href="http://127.0.0.1:8000/archinkluencerhome/" class="w3-bar-item w3-button "><img  src="../static/icon_grey.png" alt="Archinkluencer" width="5%"></a>-->
+      <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <div class="w3-bar ">
+        <button class="w3-bar-item w3-button" onclick="openCity('step_01')"> <i class="fa-solid fa-ruler-combined"></i> Raum </button>
+        <button class="w3-bar-item w3-button" onclick="openCity('step_02')"> <i class="fa-solid fa-door-open"></i> Türe </button>
+        <button class="w3-bar-item w3-button" onclick="openCity('step_03.1')"> <i class="fa-solid fa-toilet"></i> Wc </button>
+           <button class="w3-bar-item w3-button" onclick="openCity('step_03.2')"> <i class="fa-solid fa-sink"></i> Waschbecken </button>
+        <button class="w3-bar-item w3-button" onclick="openCity('step_04')"> <i class="fa-solid fa-circle-check"></i> Generierung </button>
+
+        <button class="w3-bar-item w3-button" onclick="openCity('step_06')"> <i class="fa-solid fa-download"></i>  Download </button>
+
+
+
+  </div>
+</div>
+</div>
+
+
+
+<div class="w3-bar w3-light-gray w3-card " id="myNavbar">
+<div id="step_01" class="w3-container  w3-display-container city " style="display:none">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-large w3-display-topright">&times;</span>
+<div>
+    <div style="float: right">
+       <img src="/static/floorplan_pikto.PNG" alt="floorplan" style="width:350px;height:300px;"/>
+    </div>
+    <div>
+  <h2>R A U M </h2>
+    <h3>Dimensionen</h3>
+  <p>Bitte geben sie folgende Werte ein:</p>
+        <div class="h7">
+            <p>Bitte geben Sie einen Punkt als Komma ein, z.B.: 5.3 , oder 4.0  </p></div>
+  <div class="input-container">
+  <label for="fname">Raum Länge:</label>
+  <input type="text" id="fname" name="fname" onkeyup='saveValue(this)'/><br><br>
+
+  <label for="lname">Raum Breite:</label>
+  <input type="text" id="lname" name="lname" onkeyup='saveValue(this)'/><br><br></div>
+
+
+
+    </div>
+      </div>
+
+
+
+<!--
+     <script>
+        function sendData(){
+            let itemNameW = document.querySelector("#fname").value;
+            let itemNameL = document.querySelector("#lname").value;
+            let itemNameD = document.querySelector("#dname").value;
+
+            let token = '{{ csrf_token }}';
+
+            let formData = new FormData();
+            formData.append('itemNameW', itemNameW);
+            formData.append('itemNameL', itemNameL);
+            formData.append('itemNameD', itemNameD);
+            formData.append('csrfmiddlewaretoken',token);
+
+                fetch('/archinkluencerhome2/', {
+                method: 'POST',
+                body: formData
+            });
+
+            window.location.reload();
+            }
+
+
+        </script>-->
+
+  </div>
+
+
+
+
+<div id="step_02" class="w3-container w3-display-container city" style="display:none">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-large w3-display-topright">&times;</span>
+    <div style="float: right">
+        <img src="/static/door_pikto.PNG" alt="floorplan" style="width:380px;height:300px;" />
+    </div>
+    <div>
+   <h2>T Ü R E </h2>
+    <h3>Position der Türe</h3>
+  <p>Bitte geben sie den Wert ein:</p>
+  <p>Abstand der Türe von der Innenkante des Raums:</p>
+    <div class="input-container">
+  <label for="lname">Position der Türe:</label>
+        <input type="text" id="dname" name="dname" required><br><br></div>
+
+
+
+    </div>
+
+
+
+    <div class="input-container">
+    <button onclick="sendData()" >
+        Bestätigen
+    </button><br><br>
+
+    </div>
+
+     <script>
+        function sendData(){
+            let itemNameW = document.querySelector("#fname").value;
+            let itemNameL = document.querySelector("#lname").value;
+            let itemNameD = document.querySelector("#dname").value;
+            let token = '{{ csrf_token }}';
+
+            let formData = new FormData();
+            formData.append('itemNameW', itemNameW);
+            formData.append('itemNameL', itemNameL);
+            formData.append('itemNameD', itemNameD);
+            formData.append('csrfmiddlewaretoken',token);
+
+                fetch('/archinkluencerhome2/', {
+                method: 'POST',
+                body: formData
+            });
+
+            window.location.reload();
+         }
+
+        </script>
+
+
+
+</div>
+
+
+
+<div id="step_03.1" class="w3-container w3-display-container city" style="display:none">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-large w3-display-topright">&times;</span>
+        <div style="float: right">
+        <img src="/static/3-walls.PNG" alt="floorplan" style="width:400px;height:300px;" />
+    </div>
+    <div>
+   <h2>A U S S T A T T U N G </h2>
+    <h3>Wandauswahl WC</h3>
+  <p>Bitte wählen sie die entsprechende Wand, um die Möbel zu platzieren.</p>
+
+    <label>Bitte wählen Sie die Wand für das WC:  </label>
+    <hr/>
+
+
+
+    <form method="POST" name="wcwall">
+              {%  csrf_token %}
+    <select name="wallname" id="walls" required>
+      <option selected disabled="true"></option>
+      <option value="1" name="wcname">Wand_01</option>s
+      <option value="2" name="wcname">Wand_02</option>
+      <option value="3" name="wcname">Wand_03</option>
+      <option value="4" name="wcname">Wand_04</option>
+    </select>
+        <input type="submit" value="bestätigen"</input>
+          <hr/>
+
+
+    </form></div></div>
+
+
+
+
+<div id="step_03.2" class="w3-container w3-display-container city" style="display:none">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-large w3-display-topright">&times;</span>
+        <div style="float: right">
+        <img src="/static/3-walls.PNG" alt="floorplan" style="width:400px;height:300px;" />
+    </div>
+    <div>
+   <h2>A U S S T A T T U N G </h2>
+    <h3>Wandauswahl Waschbecken</h3>
+  <p>Bitte wählen sie die entsprechende Wand, um die Möbel zu platzieren.</p>
+    <div>
+      <label>Bitte wählen Sie die Wand für das Waschbecken:  </label>
+          <hr/>
+          <form method="POST">
+              {%  csrf_token %}
+    <select name="wallname"  id="walls" required>
+      <option  selected disabled="true"></option>
+      <option value="5" name="sinkname">Wand_01</option>
+      <option value="6" name="sinkname">Wand_02</option>
+      <option value="7" name="sinkname">Wand_03</option>
+      <option value="8" name="sinkname">Wand_04</option>
+    </select>
+          <input type="submit" value="bestätigen"</input>
+          <hr/>
+
+      </form>
+
+
+</div>
+
+</div>
+</div>
+
+<div id="step_04" class="w3-container w3-display-container city" style="display:none">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-large w3-display-topright">&times;</span>
+     <h2>G E N E R I E R U N G </h2>
+    <h3>Barrierefreie Lösungen</h3>
+    <h5>Der Algorithmus "Bewegungsfreiheit"...</h5>
+      <p>. . . berechnet Lösungen, bei denen sich die seitlichen Bewegungsflächen nicht überschneiden. Die vorgelagerten Flächen vor den Sanitärobjekten dürfen sich überlagern.</p>
+
+    <p> </p>
+    <h5>Der Algorithmus "Flächenoptimierung"...</h5>
+      <p>. . . berechnet Lösungen, bei denen sich die seitlichen Bewegungsflächen überschneiden dürfen, ohne dass sie sich mit den Sanitärobjekten überschneiden.</p>
+    <br>
+    <p>Wähle den Algorithmus: </p>
+     <hr/>
+          <form method="POST">
+              {%  csrf_token %}
+    <select name="wallname"  id="algos" required>
+      <option  selected disabled="true"></option>
+      <option value="10" name="algo">Bewegungsfreiheit</option>
+      <option value="20" name="algo">Flächenoptimierung</option>
+
+    </select>
+          <input type="submit" value="bestätigen"</input>
+          <hr/>
+
+      </form>
+
+
+    <p>Zum Speichern deiner Eingaben und für eine Lösungsgenerierung, drücke auf den Knopf:</p>
+   <script>
+        function refresh(){
+            let token = '{{ csrf_token }}'
+            window.location.reload();
+            };
+        </script>
+    <button onclick="refresh()">
+        Generierung
+  </button><br><br>
+
+
+</div>
+
+
+<div id="step_06" class="w3-container w3-display-container city" style="display:none">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-large w3-display-topright">&times;</span>
+     <h2>D O W N L O A D </h2>
+    <h3>ifc-Datei</h3>
+  <p>Laden sie ihre Lösung als ifc Datei herunter, um einfach mit ihr weiter zu arbeiten.</p>
+
+
+<figure>
+    <a
+        href="/static/archinkluencer002.ifc" download="/archinkluencer002.ifc">
+        <button id="express_download">download</button>
+
+    </a>
+</figure>
+</div>
+    </div>
+
+
+
+
+
+
+
+<script>
+    var wallOBject = document.getElementById("wallname");
+    addEventListener("change", function() {
+        console.log(wallOBject)
+        // function/code to send the values to the back-end Django URL
+        // "wallOBject.value" will return the value of the select element
+});
+
+</script>
+
+
+
+
+
+
+
+<script>
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(cityName).style.display = "block";
+}
+</script>
+
+<!--
+    <div id="viewer-container"></div>
+
+    <div id="socket-connection-form">
+        <label for="initials-name">Enter Your Initials</label><br>
+        <input maxlength="2" type="text" id="initials-name" name="initials-name"><br>
+        <button id="socket-Connect-Button" onclick="connectToSocket()">Connect</button>
+    </div>-->
+
+
+<!-- some references -->
+
+<!--<script type = "text/html" src="../App_Arch/index.js"></script>-->
+<div class="w3-container">
+<div>
+
+<div id="mydiv">
+  <div id="mydivheader"><i class="fa-solid fa-lightbulb"></i> Infos</div>
+    <div class=" w3-text-grey w3-hover-text-grey">
+    <p>Raumlänge in Meter:</p><p id="Laenge"></p>
+<p>Raumbreite in Meter:</p><p id="Breite"></p></div>
+    <p class="  w3-text-deep-orange w3-hover-text-grey"  id="id-output">
+
+        <h3></h3> </p>
+       <!-- <p>Raumgröße:</p>
+         <p id="id-output2">
+        <h3></h3></p>-->
+
+   <script>
+        function refresh(){
+            let token = '{{ csrf_token }}'
+            window.location.reload();
+            };
+        </script>
+    <button onclick="refresh()">
+        <i class="fa-solid fa-rotate"></i> Neue Variante
+  </button><br><br>
+     </div></div >
+
+
+</div>
+
+
+
+<script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+
+    <script type="text/javascript">
+
+        document.getElementById("fname").value = getSavedValue("fname");    // set the value to this input
+        document.getElementById("Laenge").innerHTML = getSavedValue("fname");
+        document.getElementById("lname").value = getSavedValue("lname");
+        document.getElementById("Breite").innerHTML = getSavedValue("lname");// set the value to this input
+
+        /* Here you can add more inputs to set value. if it's saved */
+
+        //Save the value function - save it to localStorage as (ID, VALUE)
+        function saveValue(e){
+            var id = e.id;  // get the sender's id to save it .
+            var val = e.value; // get the value.
+            console.log(val)
+            localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override .
+
+            let itemNameW = document.querySelector("#fname").value;
+            let itemNameL = document.querySelector("#lname").value;
+            let itemNameD = document.querySelector("#dname").value;
+
+            let token = '{{ csrf_token }}';
+
+            let formData = new FormData();
+            formData.append('itemNameW', itemNameW);
+            formData.append('itemNameL', itemNameL);
+            formData.append('itemNameD', itemNameD);
+            formData.append('csrfmiddlewaretoken',token);
+
+                fetch('/archinkluencerhome2/', {
+                method: 'POST',
+                body: formData
+            });
+
+            window.location.reload();
+        }
+
+        //get the saved value function - return the value of "v" from localStorage.
+        function getSavedValue  (v){
+            if (!localStorage.getItem(v)) {
+                return "";// You can change this to your defualt value.
+            }
+            return localStorage.getItem(v);
+
+        }
+</script>
+
+<canvas id="three-canvas"></canvas>
+
+<script src="../static/bundledjango.js"></script>
+
+
+<div class="w3-container" style="padding:128px 16px" id="konzept">
+  <h3 class="w3-center">KONZEPT</h3>
+  <p class="w3-center w3-large">Mehr Infos zum Projekt</p>
+  <div class="w3-row-padding " style="margin-top:64px">
+    <div class="ww3-col.s12 m5 w3-margin-bottom ">
+      <div class="w3-card ">
+          <div class="w3-container ">
+          <h3 class="w3-text-deep-orange"> Vision</h3>
+          <h4 class="w3-opacity">Welche Problemstellung behebt Archinkluencer?</h4>
+          <p>Da ich selber im Rolli unterwegs bin, bekomme ich es unmittelbar mit,
+              wenn eine Planung ihre Probleme mit der Barrierefreiheit hat.
+              Im Austausch mit anderen Architekt*innen zu dem Thema  ist mir aufgefallen,
+              dass sie eines gemeinsam haben.
+              Nämlich die gleichen Fragen und Probleme bei der barrierefreien Planung.
+              Oftmals fällt es schwer, die Bedürfnisse behinderter Menschen nachzuvollziehen,
+              um  auch diese in der Architektur zu repräsentieren.
+          </p>   <p>Hier kann Archinkluencer unterstützen!  </p>
+                 <img src="../static/Problem.png" alt="Problem" style="width:50%">
+       </div>
+                 </div>
+               </div>
+             </div>
+
+    <div class="w3-row-padding " style="margin-top:64px">
+    <div class="ww3-col.s12 m5 w3-margin-bottom ">
+      <div class="w3-card ">
+          <div class="w3-container ">
+          <h3 class="w3-text-deep-orange"> Planung</h3>
+          <h4 class="w3-opacity">Integration in die BIM-Planung mit ifc </h4>
+          <p>.ifc ist ein gängiges und anerkanntes Dateiformat, zum Austausch von Gebäudemodellen unter Planenden. Mithilfe dieser Datei können zum Beispiel DIN-Checks und Kollisionsprüfungen durchgeführt werden. Das ist besonders hilfreich, wenn es mehrere Planungsbeteiligte gibt. Gerade im BIM-Umfeld kann das die Planung vereinfachen.
+Das Problem mit ifc ist, dass es beim Import in ein anderes CAD-, oder Planungs-Programm, oder durch zeichnerische Ungenauigkeiten, häufig zu Unstimmigkeiten kommt, die ein Weiterarbeiten mit der Datei und dem Modell erschweren.
+</p>
+            <h4 class="w3-opacity">Wie geht Archinkluencer damit um?</h4>
+            <p>
+Archinkluencer löst diese bekannten Probleme folgendermaßen:
+Die ifc-Datei, die im Viewer angezeigt wird, wurde komplett in Python mit Hilfe der IfcOpenShell Library programmiert und nicht gezeichnet. Daher gibt es keine zeichnerischen Ungenauigkeiten. Zudem prüft ein Algorithmus bevor die Datei gespeichert wird, ob es Abweichungen von der Barrierefreiheits-DIN-18040 gibt. So muss die Datei erst gar nicht zum Prüfen exportiert werden, sondern DIN-komforme Lösungen werden automatisch generiert. Dadurch wird den Planenden ein weiterer Check abgenommen und sichergestellt, dass die Planung barrierefrei ist.
+Zum einfachen Weiterarbeiten mit dieser Planungsgrundlage, kann die ifc Datei am Ende heruntergeladen werden und sie funktioniert garantiert in jedem Programm!
+</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-row-padding " style="margin-top:64px">
+    <div class="ww3-col.s12 m5 w3-margin-bottom ">
+      <div class="w3-card ">
+          <div class="w3-container ">
+          <h3 class="w3-text-deep-orange"> Design </h3>
+          <h4 class="w3-opacity">DIN-konforme Lösungen </h4>
+          <p> Ein Algorithmus prüft mögliche Positionierungen für die Sanitärobjekte. Dieser Prozess durchläuft
+          mehrere Schleifen. Die Positionierungsregeln basieren auf der DIN-18040 Teil 1, also der DIN Norm
+          für Barrierefreiheit für öffentliche Gebäude.</p>
+
+          <img src="../static/DINCheck.png" alt="Problem" style="width:30%">
+              <br><br>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-row-padding " style="margin-top:64px">
+    <div class="ww3-col.s12 m5 w3-margin-bottom ">
+      <div class="w3-card ">
+          <div class="w3-container ">
+          <h3 class="w3-text-deep-orange"> Unterstützung </h3>
+          <h4 class="w3-opacity">Verwendung der App</h4>
+          <p> Tutorial zur Nutzung der App: </p>
+
+          <video width="320" height="240" controls>
+            <source src="../static/tutorial.MP4" type=video/mp4>
+            </video>
+
+
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="w3-container" style="padding:128px 16px" id="konzept">
+  <h3 class="w3-center">PROGRAMM-ARCHITEKTUR</h3>
+  <p class="w3-center w3-large">Wie ist die App aufgebaut?</p>
+  <div class="w3-row-padding " style="margin-top:64px">
+    <div class="ww3-col.s12 m5 w3-margin-bottom ">
+
+      <div class="w3-card ">
+       <!-- <img src="/w3images/team2.jpg" alt="Amelie" style="width:100%"> -->
+        <div class="w3-display-container w3-center ">
+
+          <img src="../static/001-Flow.PNG" alt="Programmarchitektur" style="width:60%">
+
+
+        </div>
+      </div>
+    </div>
+
+<!-- Team Section -->
+<div class="w3-container" style="padding:128px 16px" id="team">
+  <h3 class="w3-center">TEAM</h3>
+  <p class="w3-center w3-large">Wer steht hinter Archinkluencer?</p>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-card">
+       <!-- <img src="/w3images/team2.jpg" alt="Amelie" style="width:100%"> -->
+        <div class="w3-container">
+          <h3>Amelie Hofer</h3>
+            <p class="w3-opacity">B.Sc</p>
+          <p class="w3-opacity">Architekturstudentin und Entwicklerin der App</p>
+          <p>Barrierefreiheit ist mir eine Herzensangelegenheit, weil ich selbst im Rollstuhl sitze.
+          Die Idee für Archinkluencer habe ich im Austausch mit aktiven Architekt*innen entwickelt. Ich
+          wollte es den Planenden vereinfachen barrierefrei und BIM integriert zu planen. </p>
+
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <!--<img src="/w3images/team1.jpg" alt="Wortmann" style="width:100%">-->
+        <div class="w3-container">
+          <h3>Prof. Thomas Wortmann</h3>
+          <p class="w3-opacity">Ph.D.,Dipl.-Ing., M.Sc</p>
+            <p class="w3-opacity">Tenure Track Professor, Architectural Computing am icd Uni Stuttgart </p>
+
+          <p>Prof. Wortmann hat die Arbeit ermöglicht und sie konzeptionell betreut.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <!---<img src="/w3images/team3.jpg" alt="Zuardin" style="width:100%">--->
+        <div class="w3-container">
+          <h3>Zuardin Akbar</h3>
+            <p class="w3-opacity">M. Arch., B. Eng.</p>
+          <p class="w3-opacity">Research Associate am icd Uni Stuttgart</p>
+          <p>Herr Akbar hat das Programmieren des Projekt betreut.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+  <h3 class="">KONTAKT</h3>
+  <p class=" w3-large">Fragen und Wünsche? Lass uns eine Nachricht da: </p>
+  <div style="margin-top:48px" >
+
+
+    <p><a href="mailto:archinkluencer@gmail.com"><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: archinkluencer@gmail.com </a></p>
+    <p><i class=" w3-center fa fa-map-marker fa-fw w3-xxlarge w3-center"></i> Deutschland, Stuttgart</p>
+    <br>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1060.3232069345938!2d9.17453610042527!3d48.782234580327334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799db025461396d%3A0x684e2cb842c33d62!2sUni%20Stuttgart%20-%20K1!5e0!3m2!1sde!2sde!4v1674728313059!5m2!1sde!2sde" width="1600" height="1200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w3-image w3-greyscale" style="width:100%;margin-top:48px"></iframe>
+    <!-- Image of location/map -->
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-deep-orange w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <!--<i class="fa fa-instagram w3-hover-opacity"></i> -->
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+     <p>© <a href="https://www.linkedin.com/in/amelie-hofer-98910a255" title="Amelie Hofer" target="_blank" class="w3-hover-text-green">Amelie Hofer</a></p>
+
+  <p>Powered by <a href="https://www.icd.uni-stuttgart.de/" title="Uni Stuttgart" target="_blank" class="w3-hover-text-green"> icd Universität Stuttgart</a> 2023 </p>
+     </footer>
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>
